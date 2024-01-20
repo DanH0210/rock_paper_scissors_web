@@ -4,36 +4,29 @@ function getComputerChoice() {
     return choices[randomIndex];
 }
 
-function fight(playerSelection, computerSelection) {
+function playeRound(playerSelection, computerSelection) {
     playerSelection = playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase();
     if (playerSelection === computerSelection) {
-        console.log(`You tied! Both of you chose ${playerSelection}`)
-        return "tie";
+        return `You tied! Both of you chose ${playerSelection}`
     }
     if (playerSelection === "Rock" && computerSelection === "Paper") {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
-        return "computer";
+        return `You lose! ${computerSelection} beats ${playerSelection}`;
     }
     if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        console.log(`You won! ${playerSelection} beats ${computerSelection}`);
-        return "player";
+        return `You won! ${playerSelection} beats ${computerSelection}`;
     }
     if (playerSelection === "Paper" && computerSelection === "Rock") {
-        console.log(`You won! ${playerSelection} beats ${computerSelection}`);
-        return "player";
+        return `You won! ${playerSelection} beats ${computerSelection}`;
     }
     if (playerSelection === "Paper" && computerSelection === "Scissors") {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
-        return "computer";
+        return `You lose! ${computerSelection} beats ${playerSelection}`;
     }
     if (playerSelection === "Scissors" && computerSelection === "Rock") {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
-        return "computer";
-        
+        return `You lose! ${computerSelection} beats ${playerSelection}`;
     }
     if (playerSelection === "Scissors" && computerSelection === "Paper") {
-        console.log(`You won! ${playerSelection} beats ${computerSelection}`);
-        return "player";
+        return `You won! ${playerSelection} beats ${computerSelection}`;
     }
+    return "Something went wrong, why am I executed?";
 }
 
