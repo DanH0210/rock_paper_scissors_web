@@ -1,10 +1,33 @@
+function game() {
+    let playerSel;
+    let computerSel;
+    let roundNum = 5;
+    let playerScore = 0;
+    while (roundNum > 0) {
+        playerSel = window.prompt("What is your select (Rock, Paper, or Scissors):")
+        playerSel = playerSel.trim();
+        computerSel = getComputerChoice();
+        let result = playRound(playerSel, computerSel);
+        console.log(result);
+        result = result.split(" ")[1];
+        if (result === "won!") {
+            playerScore += 1;
+            roundNum -= 1;
+        }
+        else if (result === "lose!") {
+            playerScore -= 1;
+            roundNum -= 1;
+        }
+    }
+}
+
 function getComputerChoice() {
     let choices = ["Rock", "Paper", "Scissors"];
     randomIndex = Math.floor(Math.random() * 3);
     return choices[randomIndex];
 }
 
-function playeRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase();
     if (playerSelection === computerSelection) {
         return `You tied! Both of you chose ${playerSelection}`
@@ -27,6 +50,7 @@ function playeRound(playerSelection, computerSelection) {
     if (playerSelection === "Scissors" && computerSelection === "Paper") {
         return `You won! ${playerSelection} beats ${computerSelection}`;
     }
-    return "Something went wrong, why am I executed?";
+    return "Choose (Rock or Paper or Scissors)";
 }
 
+game();
