@@ -10,15 +10,25 @@ function game() {
         let result = playRound(playerSel, computerSel);
         console.log(result);
         result = result.split(" ")[1];
-        if (result === "won!") {
+        if (result === "Won!") {
             playerScore += 1;
             roundNum -= 1;
         }
-        else if (result === "lose!") {
+        else if (result === "Lose!") {
             playerScore -= 1;
             roundNum -= 1;
         }
     }
+    if (playerScore > 0) {
+        console.log(`Congratulation! You won with ${playerScore * 20} points`);
+    }
+    else if (playerScore < 0) {
+        console.log(`Too bad, you lost ~.~`);
+    }
+    else {
+        console.log(`That was a good game, you tied`)
+    }
+
 }
 
 function getComputerChoice() {
@@ -33,22 +43,22 @@ function playRound(playerSelection, computerSelection) {
         return `You tied! Both of you chose ${playerSelection}`
     }
     if (playerSelection === "Rock" && computerSelection === "Paper") {
-        return `You lose! ${computerSelection} beats ${playerSelection}`;
+        return `You Lose! ${computerSelection} beats ${playerSelection}`;
     }
     if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        return `You won! ${playerSelection} beats ${computerSelection}`;
+        return `You Won! ${playerSelection} beats ${computerSelection}`;
     }
     if (playerSelection === "Paper" && computerSelection === "Rock") {
-        return `You won! ${playerSelection} beats ${computerSelection}`;
+        return `You Won! ${playerSelection} beats ${computerSelection}`;
     }
     if (playerSelection === "Paper" && computerSelection === "Scissors") {
-        return `You lose! ${computerSelection} beats ${playerSelection}`;
+        return `You Lose! ${computerSelection} beats ${playerSelection}`;
     }
     if (playerSelection === "Scissors" && computerSelection === "Rock") {
-        return `You lose! ${computerSelection} beats ${playerSelection}`;
+        return `You Lose! ${computerSelection} beats ${playerSelection}`;
     }
     if (playerSelection === "Scissors" && computerSelection === "Paper") {
-        return `You won! ${playerSelection} beats ${computerSelection}`;
+        return `You Won! ${playerSelection} beats ${computerSelection}`;
     }
     return "Choose (Rock or Paper or Scissors)";
 }
