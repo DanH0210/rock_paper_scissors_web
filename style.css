@@ -1,0 +1,55 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.img-holder {
+    min-width: 400px;
+    display: flex;
+    gap: 50px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+
+.buttons > * {
+    flex: 1;
+    min-height: 40px;
+    font-size: 20px;
+    background-color: bisque;
+    padding: 0;
+    
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+.result {
+    font-size: 30px;
+    font-weight: 900;
+    margin-top: 40px;
+    text-align: center;
+}
+
+button.restart {
+    display: none;
+    margin: 20px;
+    padding: 10px 20px;
+    align-self: center;
+    
+}
